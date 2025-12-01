@@ -2,7 +2,7 @@ import $ from '../in.mjs';
 import _ from 'lodash';
 import 'core-js/es/object/group-by.js';
 import 'core-js/actual/iterator/index.js';
-import { find2D, map2D, neighbors2D, pathfind, rotateDir, toString2D, neighbour, DIRECTIONS }
+import { find2D, map2D, neighbors2D, pathfind, rotateDir, toString2D, neighbor, DIRECTIONS }
     from '../util/src/util.mjs';
 
 // --- browser devtools cutoff ---
@@ -39,7 +39,7 @@ t = map2D(t, (e, rc) => e === 'S' ? startSymbol : e);
 function* validPipeNeighbors(current) {
     yield* pipeConnections[_.get(t, current)]
         .split('')
-        .map(dir => neighbour(current, dir));
+        .map(dir => neighbor(current, dir));
 }
 
 const { D } = pathfind(startPos, { neighborEmitter: validPipeNeighbors });
@@ -85,10 +85,10 @@ function walkPipes(t, start) {
     do {
         let { dir: newDir, l, r, turn } = stateMaps[_.get(t, current)][dir];
         turningNumber += turn;
-        L.push(...l.map(nDir => neighbour(current, nDir)).filter(n => _.get(t, n) == '.'));
-        R.push(...r.map(nDir => neighbour(current, nDir)).filter(n => _.get(t, n) == '.'));
+        L.push(...l.map(nDir => neighbor(current, nDir)).filter(n => _.get(t, n) == '.'));
+        R.push(...r.map(nDir => neighbor(current, nDir)).filter(n => _.get(t, n) == '.'));
         dir = newDir;
-        current = neighbour(current, newDir);
+        current = neighbor(current, newDir);
     }
     while (current.toString() != start.toString());
     let areaCandidates = turningNumber < 0 ? L : R;

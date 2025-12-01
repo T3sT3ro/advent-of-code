@@ -227,7 +227,7 @@ export function map2D(t, f) {
  * @param {DirectionDeltas} [directions]
  * @returns {RC} neighbor's position
  */
-export function neighbour(rc, dir, directions = DIRECTIONS) {
+export function neighbor(rc, dir, directions = DIRECTIONS) {
     return [rc[0] + DIRECTIONS[dir][0], rc[1] + DIRECTIONS[dir][1]];
 }
 
