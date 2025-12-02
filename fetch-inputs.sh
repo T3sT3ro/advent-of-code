@@ -70,17 +70,10 @@ for i in $DAYS; do
     | perl -pe "s/(.*status: 200.*)/$(tput setaf 2)\$1$(tput sgr0)/" | perl -pe "s/(.*status: (?!200).*)/$(tput setaf 1)\$1$(tput sgr0)/"
 
     if [[ ${PIPESTATUS[0]} -ne 0 ]]; then continue; fi; # skip if curl failed
-    SOLUTION="$YEAR/$DAY_PADDED.mjs"
+    TEMPLATE=templates/default.ts
+    SOLUTION="$YEAR/$DAY_PADDED.${TEMPLATE##*.}"
     if [[ ! -f $SOLUTION ]]; then
         echo "programm missing, creating template..."
-        cat > $SOLUTION <<TEMPLATE
-import $ from '../in.mjs';
-import _ from 'lodash';
-import 'core-js/es/object/group-by.js';
-import 'core-js/actual/iterator/index.js';
-// --- browser devtools cutoff ---
-const t = \$('IN/$DAY_PADDED').textContent.trim()
-    .split('\n');
-TEMPLATE
+        cat $TEMPLATE | sed 's/<<<DAY>>>/'"$DAY_PADDED"'/g' > $SOLUTION
     fi
 done
