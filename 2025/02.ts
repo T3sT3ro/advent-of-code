@@ -5,7 +5,7 @@ import 'core-js/actual/iterator/index.js';
 // --- browser devtools cutoff ---
 const t = $('IN/02').textContent.trim()
     .split(',')
-    .map(s => s.match(/(\d+)-(\d+)/)!!.slice(1).map(Number));
+    .map(s => s.match(/(\d+)-(\d+)/)!.slice(1).map(Number));
 
 // numbers of form x=a*(10^(2k+1)+1)
 // let answer1 = 0;
@@ -21,12 +21,12 @@ const t = $('IN/02').textContent.trim()
 // }
 
 let [a1, a2] = [0, 0];
-for(const [l, u] of t) {
-    for(let i=l; i<=u; i++) {
+for (const [l, u] of t) {
+    for (let i = l; i <= u; i++) {
         const s = i.toString();
-        if(s.match(/^(\d+)\1$/)) 
+        if (s.match(/^(\d+)\1$/))
             a1 += i;
-        if(s.match(/^(\d+)\1+$/))
+        if (s.match(/^(\d+)\1+$/))
             a2 += i;
     }
 }
