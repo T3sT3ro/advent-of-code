@@ -108,7 +108,7 @@ export function pathfind(
     } = {}
 ) {
     let returnValue = { D: { [S]: 0 } };
-    if (trackParents) 
+    if (trackParents)
         returnValue.P = { [S]: undefined };
     let { D, P } = returnValue;
     let Q = new FastPriorityQueue(([, p1], [, p2]) => p1 < p2);
@@ -216,7 +216,17 @@ export function* iter2D(t) {
  * @returns {Array2D<R>}
  */
 export function map2D(t, f) {
-    return Object.fromEntries(Object.entries(t).map(([r, tx]) => [r, Object.fromEntries(Object.entries(tx).map(([c, e]) => [c, f(e, [+r, +c])]))]));
+    return Object.fromEntries(Object.entries(t).map(
+        ([r, tx]) => [
+            r,
+            Object.fromEntries(Object.entries(tx).map(([c, e]) =>
+                [
+                    c,
+                    f(e, [+r, +c])
+                ])
+            )
+        ])
+    );
 }
 
 
