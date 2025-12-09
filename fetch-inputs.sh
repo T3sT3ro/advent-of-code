@@ -131,23 +131,23 @@ mkdir -p "$YEAR/IN"
 # Fetch inputs for each day
 for i in "${DAYS[@]}"; do
     
-    DAY_PADDED=$(printf "%02d" "$i") # ensure zero-padded
-    DAY_URL=$((10#$i)) # remove leading zeros
+    DAY_NUM=$((10#$i)) # remove leading zeros and convert to decimal
+    DAY_PADDED=$(printf "%02d" "$DAY_NUM") # ensure zero-padded
     INPUT_FILE="$YEAR/IN/$DAY_PADDED"
     
     # Skip if input already exists and force flag not set
     if [[ -f "$INPUT_FILE" && "$FORCE_OVERWRITE" == false ]]; then
-        echo "Skipping year $YEAR day $DAY_URL (input already exists)"
+        echo "Skipping year $YEAR day $DAY_NUM (input already exists)"
     else
-        echo -n "Fetching year $YEAR day $DAY_URL... "
-        curl "https://adventofcode.com/$YEAR/day/$DAY_URL/input" \
+        echo -n "Fetching year $YEAR day $DAY_NUM... "
+        curl "https://adventofcode.com/$YEAR/day/$DAY_NUM/input" \
         -b "session=$SESSION_COOKIE" \
         -H 'authority: adventofcode.com' \
         -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
         -H 'accept-language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7' \
         -H 'cache-control: no-cache' \
         -H 'pragma: no-cache' \
-        -H "referer: https://adventofcode.com/$YEAR/day/$DAY_URL" \
+        -H "referer: https://adventofcode.com/$YEAR/day/$DAY_NUM" \
         -H 'sec-ch-ua: "Google Chrome";v="107", "Chromium";v="107", "Not=A?Brand";v="24"' \
         -H 'sec-ch-ua-mobile: ?0' \
         -H 'sec-ch-ua-platform: "Linux"' \
