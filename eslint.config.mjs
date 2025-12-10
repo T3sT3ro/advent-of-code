@@ -45,6 +45,7 @@ export default defineConfig([
             'unused-imports': unusedImports,
         },
         rules: {
+            '@stylistic/arrow-parens': ['error', 'as-needed'],
             // Import rules
             'import/no-unused-modules': 'warn',
 
