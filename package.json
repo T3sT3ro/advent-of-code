@@ -4,7 +4,6 @@
     "core-js": "^3.47.0",
     "es-toolkit": "^1.42.0",
     "fastpriorityqueue": "^0.7.5",
-    "lodash": "^4.17.21",
     "lodash-es": "^4.17.21",
     "plotly": "^1.0.6",
     "plotly.js-dist": "^2.35.3",
