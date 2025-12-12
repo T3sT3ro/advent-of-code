@@ -17,6 +17,7 @@ Options:
   -t, --template FILE    Template file to use (can be specified multiple times, default: templates/default)
   -f, --force            Overwrite existing input files
   --no-template          Skip creating solution template
+  --no-download          Skip downloading inputs, only create templates
   -h, --help             Show this help message
 
 Arguments:
@@ -35,7 +36,7 @@ EOF
 }
 
 # Parse command line arguments using GNU getopt
-TEMP=$(getopt -o 'hfy:d:t:' --long 'help,force,year:,day:,template:,no-template' -n "$0" -- "$@")
+TEMP=$(getopt -o 'hfy:d:t:' --long 'help,force,year:,day:,template:,no-template,no-download' -n "$0" -- "$@")
 if [ $? -ne 0 ]; then
     echo "Error parsing arguments. Use -h for help." >&2
     exit 1
@@ -48,6 +49,7 @@ YEAR=$(date +%Y)
 DEFAULT_DAY=$(date +%-d)
 TEMPLATES=("templates/default")
 CREATE_TEMPLATE=true
+DOWNLOAD_INPUT=true
 FORCE_OVERWRITE=false
 DAYS=()
 USE_DEFAULT_DAY=true
@@ -82,6 +84,10 @@ while true; do
             ;;
         --no-template)
             CREATE_TEMPLATE=false
+            shift
+            ;;
+        --no-download)
+            DOWNLOAD_INPUT=false
             shift
             ;;
         --)
@@ -135,10 +141,12 @@ for i in "${DAYS[@]}"; do
     DAY_PADDED=$(printf "%02d" "$DAY_NUM") # ensure zero-padded
     INPUT_FILE="$YEAR/IN/$DAY_PADDED"
     
-    # Skip if input already exists and force flag not set
-    if [[ -f "$INPUT_FILE" && "$FORCE_OVERWRITE" == false ]]; then
-        echo "Skipping year $YEAR day $DAY_NUM (input already exists)"
-    else
+    # Download input if requested
+    if [[ "$DOWNLOAD_INPUT" == true ]]; then
+        # Skip if input already exists and force flag not set
+        if [[ -f "$INPUT_FILE" && "$FORCE_OVERWRITE" == false ]]; then
+            echo "Skipping year $YEAR day $DAY_NUM (input already exists)"
+        else
         echo -n "Fetching year $YEAR day $DAY_NUM... "
         curl "https://adventofcode.com/$YEAR/day/$DAY_NUM/input" \
         -b "session=$SESSION_COOKIE" \
@@ -163,6 +171,7 @@ for i in "${DAYS[@]}"; do
         | perl -pe "s/(.*status: 200.*)/$(tput setaf 2)\$1$(tput sgr0)/" | perl -pe "s/(.*status: (?!200).*)/$(tput setaf 1)\$1$(tput sgr0)/"
 
         if [[ ${PIPESTATUS[0]} -ne 0 ]]; then continue; fi # skip if curl failed
+        fi
     fi
     
     # Create solution templates if requested
