@@ -4,12 +4,9 @@ import 'core-js/actual/iterator/index.js';
 import { writeFileSync } from 'node:fs';
 import { maxBy, minBy } from 'es-toolkit';
 import assert from 'node:assert';
-// eslint-disable-next-line no-var
-var inputFile = 'IN/09';
 // --- browser devtools cutoff ---
-// eslint-disable-next-line no-var
-var inputFile = inputFile ?? 'html';
-const points = $(inputFile).textContent.trim().split('\n')
+const inputFile = 'IN/09';
+const points = $(globalThis.window ? 'html' : inputFile).textContent.trim().split('\n')
     .map(line => line.split(','))
     .map(([x, y]) => ({ x: +x, y: +y })) as Point[];
 
