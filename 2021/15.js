@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 const _ = require('lodash');
 const FPQ = require('fastpriorityqueue');
 

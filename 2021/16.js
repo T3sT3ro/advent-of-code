@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 const _ = require('lodash');
 
 const T = $('IN/16').textContent.trim().split('')

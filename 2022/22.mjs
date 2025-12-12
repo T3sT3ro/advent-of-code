@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 _ = require('lodash');
 let [map, instr] = $('IN/22').textContent.split('\n\n');
 map = map.split('\n');

@@ -12,7 +12,7 @@
 //     "######.#"
 // ];
 
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/17').textContent.trim().split('\n');
 
 cube = [t.map(ts => ts.split('').map(c => c == '.' ? 0 : 1))];

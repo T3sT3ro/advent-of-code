@@ -1,8 +1,8 @@
-import $ from '../in.mjs';
+import $ from '@aoc/util/in';
 import 'es-toolkit';
 // import _ from 'lodash';
 import 'core-js/actual/iterator/index.js';
-import { DIRECTIONS, map2D, neighbors2D } from '../util/src/util.mjs';
+import { DIRECTIONS, map2D, neighbors2D } from '@aoc/util/util';
 // --- browser devtools cutoff ---
 const t = $('IN/04').textContent.trim().split('\n');
 

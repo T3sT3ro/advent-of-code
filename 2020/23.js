@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/23').textContent.trim().split('');
 
 function buildChain(t) {

@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 let [Srules, strings] = $('IN/19').textContent.replaceAll('"', '')
     .split('\n\n').map(ts => ts.split('\n').filter(x => x.length > 0))
 Srules = Srules

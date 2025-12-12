@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 const { indexOf } = require('lodash');
 const _ = require('lodash');
 

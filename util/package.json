@@ -1,17 +1,23 @@
 {
-  "name": "@t3st3ro/util",
+  "name": "@aoc/util",
   "version": "1.0.0",
   "description": "utilities for quick scripting and hacking sessions such as AoC",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc"
-  },
   "keywords": [
     "util"
   ],
   "type": "module",
   "author": "T3sT3ro",
   "license": "ISC",
+  "exports": {
+    "./in": "./src/in.ts",
+    "./2D": "./src/2D.ts",
+    "./matrix": "./src/matrix.ts",
+    "./util": "./src/util.mjs",
+    "./fenwickTree": "./src/fenwickTree.mjs",
+    "./prototypeExtensions": "./src/prototypeExtensions.ts",
+    "./stringPrototypes": "./src/stringPrototypes.ts",
+    "./Mutable": "./src/Mutable.ts"
+  },
   "devDependencies": {
     "@types/lodash": "^4.14.191",
     "@types/node": "^18.11.13",

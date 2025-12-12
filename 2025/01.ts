@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '@aoc/util/in';
 import { sum, windowed } from 'es-toolkit';
 import 'core-js/es/object/group-by.js';
 import 'core-js/actual/iterator/index.js';

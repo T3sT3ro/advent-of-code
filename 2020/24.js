@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/24').textContent.trim().split('\n');
 
 /*

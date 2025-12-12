@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 const t = $('IN/07').textContent.split(',').map(x => +x);
 const _ = require('lodash');
 

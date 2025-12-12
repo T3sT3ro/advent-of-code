@@ -1,6 +1,6 @@
 // advent of code 2020 day 11 - cellular automata
 
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 let T = $('IN/11').textContent.trim();
 
 // add border of invalid characters

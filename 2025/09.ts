@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '@aoc/util/in';
 import 'es-toolkit';
 import 'core-js/actual/iterator/index.js';
 import { writeFileSync } from 'node:fs';

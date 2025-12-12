@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '../util/src/in.js';
 import _ from 'lodash';
 // --- browser devtools cutoff ---
 const t = $("IN/04").textContent.trim()

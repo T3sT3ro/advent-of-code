@@ -1,4 +1,4 @@
-import $ from '../../in.mjs';
+import $ from '@aoc/util/in';
 import * as fs from "fs";
 import * from "tables";
 

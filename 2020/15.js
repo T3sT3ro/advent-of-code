@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/15').textContent.trim().split(',');
 
 at = Array(30_000_001); // mapping of number to seen at position

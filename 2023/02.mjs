@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '../util/src/in.js';
 import _ from 'lodash';
 // --- browser devtools cutoff ---
 /** @type {{red: number, green: number, blue: number}[][]} */

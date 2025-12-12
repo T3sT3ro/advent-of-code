@@ -2,10 +2,10 @@
 import { readFileSync } from 'fs';
 
 /**
- * 
- * @param {string} s 
+ *
+ * @param {string} s
  * @returns {{textContent: string}}
  */
 export default function $(s) {
-    return {textContent: readFileSync(typeof document === 'undefined' ? s : 'pre', 'utf8')};
+    return { textContent: readFileSync(typeof document === 'undefined' ? s : 'pre', 'utf8') };
 }

@@ -1,0 +1,9 @@
+{
+  "name": "@aoc/2015",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@aoc/util": "workspace:*"
+  }
+}

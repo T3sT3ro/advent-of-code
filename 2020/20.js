@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/20').textContent.split('\n\n').filter(ts => ts.length>0).map(ts => ts.split('\n'))
 ds = t.map(([td, ...tile])=> [(parseInt(td.substr(5,4))), tile])
 tileStrings = Object.fromEntries(ds);

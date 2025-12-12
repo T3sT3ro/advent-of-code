@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '../util/src/in.js';
 import _ from 'lodash';
 import FastPriorityQueue from 'fastpriorityqueue';
 // --- browser devtools cutoff ---

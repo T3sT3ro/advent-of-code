@@ -9,6 +9,48 @@ overrides:
 
 importers:
 
+  '2015':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2020':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2021':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2022':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2023':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2024':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
+  '2025':
+    dependencies:
+      '@aoc/util':
+        specifier: workspace:*
+        version: link:../util
+
   .:
     dependencies:
       '@types/lodash':
@@ -69,6 +111,18 @@ importers:
       typescript-eslint:
         specifier: ^8.48.1
         version: 8.48.1(eslint@9.39.1)(typescript@5.9.3)
+
+  util:
+    devDependencies:
+      '@types/lodash':
+        specifier: ^4.14.191
+        version: 4.17.21
+      '@types/node':
+        specifier: ^18.11.13
+        version: 18.19.130
+      typescript:
+        specifier: ^4.9.4
+        version: 4.9.5
 
 packages:
 
@@ -175,6 +229,9 @@ packages:
 
   '@types/lodash@4.17.21':
     resolution: {integrity: sha512-FOvQ0YPD5NOfPgMzJihoT+Za5pdkDJWcbpuj1DjaKZIr/gxodQjY/uWEFlTNqW2ugXHUiL8lRQgw63dzKHZdeQ==}
+
+  '@types/node@18.19.130':
+    resolution: {integrity: sha512-GRaXQx6jGfL8sKfaIDD6OupbIHBr9jv7Jnaml9tB7l4v068PAOXqfcujMMo5PhbIs6ggR1XODELqahT2R8v0fg==}
 
   '@types/node@24.10.1':
     resolution: {integrity: sha512-GNWcUTRBgIRJD5zj+Tq0fKOJ5XZajIiBroOF0yvj2bSU1WvNdYS/dn9UxwsujGW4JX06dnHyjV2y9rRaybH0iQ==}
@@ -1057,6 +1114,11 @@ packages:
       eslint: ^8.57.0 || ^9.0.0
       typescript: '>=4.8.4 <6.0.0'
 
+  typescript@4.9.5:
+    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
+
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
@@ -1065,6 +1127,9 @@ packages:
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
+
+  undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
 
   undici-types@7.16.0:
     resolution: {integrity: sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw==}
@@ -1209,6 +1274,10 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@types/lodash@4.17.21': {}
+
+  '@types/node@18.19.130':
+    dependencies:
+      undici-types: 5.26.5
 
   '@types/node@24.10.1':
     dependencies:
@@ -2296,6 +2365,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  typescript@4.9.5: {}
+
   typescript@5.9.3: {}
 
   unbox-primitive@1.1.0:
@@ -2304,6 +2375,8 @@ snapshots:
       has-bigints: 1.1.0
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
+
+  undici-types@5.26.5: {}
 
   undici-types@7.16.0: {}
 

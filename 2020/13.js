@@ -1,4 +1,4 @@
-$ = require('../in.mjs');
+$ = require('../util/src/in.js');
 t = $('IN/13').textContent.trim();
 
 // 1. modulo each and minimum 

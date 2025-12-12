@@ -1,4 +1,4 @@
-import $ from '../in.mjs';
+import $ from '../util/src/in.js';
 import _ from 'lodash';
 import 'core-js/es/object/group-by.js';
 import { toString2D } from '../util/src/util.mjs';
