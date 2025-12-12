@@ -46,6 +46,9 @@ export default defineConfig([
         },
         rules: {
             '@stylistic/arrow-parens': ['error', 'as-needed'],
+            '@stylistic/comma-dangle': ['error', {
+                functions: 'never',
+            }],
             // Import rules
             'import/no-unused-modules': 'warn',
 
